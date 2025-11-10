@@ -101,7 +101,7 @@ public class Server {
             int spacing = 20;
             synchronized (clients) {
             	for (ClientHandler client : clients) {                	
-                    Label userLabel = new Label(" -> " +client.getClientName());
+                    Label userLabel = new Label(" - " +client.getClientName());
                     userLabel.setLayoutX(0);
                     userLabel.setLayoutY(spacing * index);
                     activeUsersPane.getChildren().add(userLabel);

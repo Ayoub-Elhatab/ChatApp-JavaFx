@@ -17,9 +17,6 @@ public class Client {
     private TextField tf_message;
     
     @FXML
-    private Button button_send;
-    
-    @FXML
     private VBox vb_messages;
     
     @FXML
@@ -51,8 +48,7 @@ public class Client {
         	 Platform.runLater(() -> appendMessage("Error connecting to server: " + e.getMessage()));
          }
     }
-    
-    
+
     public void readMessage() {
         Thread readerThread = new Thread(() -> {
             String msgFromServer;
@@ -105,9 +101,7 @@ public class Client {
         // Auto-scroll to the bottom of the scroll pane.
         sp_main.setVvalue(1.0);
     }
-    
-    
-    
+
     private void closeEverything() {
         try {
             if (in != null) { in.close(); }
