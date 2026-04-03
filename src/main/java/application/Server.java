@@ -21,25 +21,14 @@ import java.util.Set;
 
 public class Server {
 	
-	@FXML
-    private ScrollPane sp_main;
-	
-	@FXML
-    private VBox vb_messages;
-
-    @FXML
-    private Pane activeUsersPane;
-    
-    @FXML
-    private Button shutdown_button;
-    
-    @FXML
-    private AnchorPane scenePane;
+	@FXML private ScrollPane sp_main;
+	@FXML private VBox vb_messages;
+    @FXML private Pane activeUsersPane;
+    @FXML private AnchorPane scenePane;
 
     private ServerSocket serverSocket;
     private static final int PORT = 5000;
     private final Set<ClientHandler> clients = new HashSet<>();
-    
 
     // Called automatically when the FXML is loaded.
     public void initialize() {

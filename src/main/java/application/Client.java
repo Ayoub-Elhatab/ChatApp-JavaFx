@@ -5,7 +5,6 @@ import java.net.Socket;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
@@ -13,14 +12,9 @@ import javafx.scene.layout.VBox;
 
 public class Client {
     
-    @FXML
-    private TextField tf_message;
-    
-    @FXML
-    private VBox vb_messages;
-    
-    @FXML
-    private ScrollPane sp_main; 
+    @FXML private TextField tf_message;
+    @FXML private VBox vb_messages;
+    @FXML private ScrollPane sp_main;
     
     private Socket clientSocket;
     private BufferedReader in;
@@ -108,7 +102,7 @@ public class Client {
             if (out != null) { out.close(); }
             if (clientSocket != null && !clientSocket.isClosed()) { clientSocket.close(); }
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error occurred" + e.getMessage());
         }
     }
 }

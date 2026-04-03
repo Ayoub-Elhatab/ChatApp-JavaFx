@@ -19,11 +19,8 @@ public class ClientHandler implements Runnable {
             this.in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             this.out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()));
             this.clientName = in.readLine();
-            
-            // notify everyone that a new user joined
-            server.broadcast(clientName + " has joined the chat!");
 
-            // update the server UI
+            server.broadcast(clientName + " has joined the chat!");
             server.updateMessages(clientName + " has joined the chat!");
         } catch (IOException e) {
             closeConnection();
@@ -65,10 +62,9 @@ public class ClientHandler implements Runnable {
             if (out != null) out.close();
             if (clientSocket != null && !clientSocket.isClosed()) clientSocket.close();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Error closing connection" + e.getMessage());
         }finally {
         	if (server != null) {
-        		// remove the client from the active list first
         		server.removeClient(this);
         		
             	server.broadcast(clientName + " has left the chat.");
