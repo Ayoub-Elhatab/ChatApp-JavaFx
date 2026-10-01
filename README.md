@@ -17,7 +17,7 @@ This project demonstrates how to create a multi-client chat application using Ja
 
 ## Screenshots
 
-| Server | Client | Connect | Shutdown |
-|--------|--------|---------|----------|
-| ![Server](./screenshots/server.png) | ![Client](./screenshots/client.png) | ![Connect](./screenshots/connect.png) | ![Shutdown](./screenshots/shutdown.png) |
+| Server | Client | Connect |
+|--------|--------|---------|
+| ![Server](./screenshots/server.png) | ![Client](./screenshots/client.png) | ![Connect](./screenshots/connect.png) |
 
